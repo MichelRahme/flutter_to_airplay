@@ -18,6 +18,8 @@ class FlutterAVPlayer: NSObject, FlutterPlatformView {
           arguments: Dictionary<String, Any>,
           binaryMessenger: FlutterBinaryMessenger) {
         _flutterAVPlayerViewController = AVPlayerViewController()
+        _flutterAVPlayerViewController.showsPlaybackControls = false
+        
         _flutterAVPlayerViewController.viewDidLoad()
         if let urlString = arguments["url"] {
             let item = AVPlayerItem(url: URL(string: urlString as! String)!)
